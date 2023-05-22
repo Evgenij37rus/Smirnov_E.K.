@@ -2,14 +2,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Пример обработки форм</title>
-    
-    <!-- Подключение стилей-->
-    
-	<link rel="stylesheet" type="text/css" href="style.css">
+  <title>Форма авторизации</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
   <div class="header">
@@ -17,7 +11,7 @@
   </div>
 	 
   <form method="post" action="login.php">
-  	<?php include('errors.php'); ?>
+  <?php include('errors.php'); ?>
   	<div class="input-group">
   		<label>Логин</label>
   		<input type="text" name="username" >
@@ -34,4 +28,4 @@
   	</p>
   </form>
 </body>
-</html>
+</html> 
