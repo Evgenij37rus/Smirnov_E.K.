@@ -1,47 +1,28 @@
-<?php 
-  session_start(); 
 
-  if (!isset($_SESSION['username'])) {
-  	$_SESSION['msg'] = "Вы должны сначала войти в систему";
-  	header('location: login.php');
-  }
-  if (isset($_GET['logout'])) {
-  	session_destroy();
-  	unset($_SESSION['username']);
-  	header("location: login.php");
-  }
-?>
 <!DOCTYPE html>
 <html>
 <head>
 	<!-- Подключение Bootstrap-->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+    <!-- Подключение Bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <!-- Подключение стилей-->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-
 <div class="header">
-    <h1>Главная страница</h1>
+    <h1 style ="text-align:center;">Это главная страница</h1>
 </div>
-<div class="content">
-  	<!-- уведомление -->
-  	<?php if (isset($_SESSION['success'])) : ?>
-      <div class="error success" >
-      	<h3>
-          <?php 
-          	echo $_SESSION['success']; 
-          	unset($_SESSION['success']);
-          ?>
-      	</h3>
-      </div>
-  	<?php endif ?>
-
-    <!-- информация о вошедшем в систему пользователе -->
-    <?php  if (isset($_SESSION['username'])) : ?>
-    	<p>Добро пожаловать! <strong><?php echo $_SESSION['username']; ?></strong></p>
-    	<p> <a href="index.php?logout='1'" style="color: red;">Выйти</a> </p>
-    <?php endif ?>
+<div style= "text-align:center; margin-left:40%;">
+<nav >
+  <ul class="nav">
+        <li class = "nav-item">
+            <a class="nav-link active" href ="http://localhost/SDO_2023/register/register.php">регистрация</a>
+        </li>
+        <li class = "nav-item">
+            <a class="nav-link active" href ="http://localhost/SDO_2023/login/login.php">авторизация</a>
+        </li>
+    </ul>
+</nav>
 </div>
 		
 </body>
